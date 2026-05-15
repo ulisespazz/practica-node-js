@@ -1,9 +1,14 @@
-let username = 'edson'
-let age = 30
-let hasHobbies = false
-let points = [10, 20, 30]
-let user = {
-  name: 'Edson',
-  lastname: 'Arantes do Nascimento',
+async function loadData() {
+  try {
+    const res = await
+    fetch ("https://jsonplaceholder.typicode.com/posts")
+
+    const data = await res.json()
+    console.log(data)
+    //console.log(JSON.stringify(data, null, 2))
+  }catch (error) {
+    console.log(error)
+  }
 }
-const PI = 3.1415
+
+loadData()
